@@ -1,0 +1,473 @@
+template_group,text,label_cloud_credential,label_payment_card,label_government_id,label_email_address,label_phone_number,label_health_information,label_financial_account
+single-cloud_credential-00,Storage review: A deployment file stores an API token [SYNTHETIC_TOKEN] used by the customer portal. The sample contains fictional information for a local security exercise.,1,0,0,0,0,0,0
+single-cloud_credential-00,Data inventory: A deployment file stores an API token [SYNTHETIC_TOKEN] used by the billing service. The note is included to demonstrate document-level classification.,1,0,0,0,0,0,0
+single-cloud_credential-00,Analyst summary: A deployment file stores an API token [SYNTHETIC_TOKEN] used by the support workspace. The sample contains fictional information for a local security exercise.,1,0,0,0,0,0,0
+single-cloud_credential-00,Document excerpt: A deployment file stores an API token [SYNTHETIC_TOKEN] used by the staff directory. The note is included to demonstrate document-level classification.,1,0,0,0,0,0,0
+single-cloud_credential-01,Data inventory: The service configuration includes a client secret placeholder [SYNTHETIC_SECRET]. This record is synthetic and must not be treated as real customer data.,1,0,0,0,0,0,0
+single-cloud_credential-01,Analyst summary: The service configuration includes a client secret placeholder [SYNTHETIC_SECRET]. No external service receives the content during this exercise.,1,0,0,0,0,0,0
+single-cloud_credential-01,Document excerpt: The service configuration includes a client secret placeholder [SYNTHETIC_SECRET]. This record is synthetic and must not be treated as real customer data.,1,0,0,0,0,0,0
+single-cloud_credential-01,Cloud object note: The service configuration includes a client secret placeholder [SYNTHETIC_SECRET]. No external service receives the content during this exercise.,1,0,0,0,0,0,0
+single-cloud_credential-02,Analyst summary: An access key is present in the cloud integration notes and should be rotated. The note is included to demonstrate document-level classification.,1,0,0,0,0,0,0
+single-cloud_credential-02,Document excerpt: An access key is present in the cloud integration notes and should be rotated. The sample contains fictional information for a local security exercise.,1,0,0,0,0,0,0
+single-cloud_credential-02,Cloud object note: An access key is present in the cloud integration notes and should be rotated. The note is included to demonstrate document-level classification.,1,0,0,0,0,0,0
+single-cloud_credential-02,Security review: An access key is present in the cloud integration notes and should be rotated. The sample contains fictional information for a local security exercise.,1,0,0,0,0,0,0
+single-cloud_credential-03,Document excerpt: The incident record describes an exposed authentication credential in a config file. No external service receives the content during this exercise.,1,0,0,0,0,0,0
+single-cloud_credential-03,Cloud object note: The incident record describes an exposed authentication credential in a config file. This record is synthetic and must not be treated as real customer data.,1,0,0,0,0,0,0
+single-cloud_credential-03,Security review: The incident record describes an exposed authentication credential in a config file. No external service receives the content during this exercise.,1,0,0,0,0,0,0
+single-cloud_credential-03,Storage review: The incident record describes an exposed authentication credential in a config file. This record is synthetic and must not be treated as real customer data.,1,0,0,0,0,0,0
+single-cloud_credential-04,Cloud object note: A private key placeholder [SYNTHETIC_PRIVATE_KEY] appears in the automation bundle. The sample contains fictional information for a local security exercise.,1,0,0,0,0,0,0
+single-cloud_credential-04,Security review: A private key placeholder [SYNTHETIC_PRIVATE_KEY] appears in the automation bundle. The note is included to demonstrate document-level classification.,1,0,0,0,0,0,0
+single-cloud_credential-04,Storage review: A private key placeholder [SYNTHETIC_PRIVATE_KEY] appears in the automation bundle. The sample contains fictional information for a local security exercise.,1,0,0,0,0,0,0
+single-cloud_credential-04,Data inventory: A private key placeholder [SYNTHETIC_PRIVATE_KEY] appears in the automation bundle. The note is included to demonstrate document-level classification.,1,0,0,0,0,0,0
+single-cloud_credential-05,Security review: The operations export contains a password field for the customer portal. This record is synthetic and must not be treated as real customer data.,1,0,0,0,0,0,0
+single-cloud_credential-05,Storage review: The operations export contains a password field for the billing service. No external service receives the content during this exercise.,1,0,0,0,0,0,0
+single-cloud_credential-05,Data inventory: The operations export contains a password field for the support workspace. This record is synthetic and must not be treated as real customer data.,1,0,0,0,0,0,0
+single-cloud_credential-05,Analyst summary: The operations export contains a password field for the staff directory. No external service receives the content during this exercise.,1,0,0,0,0,0,0
+single-cloud_credential-06,Storage review: The repository scan found a synthetic bearer token in a deployment manifest. The note is included to demonstrate document-level classification.,1,0,0,0,0,0,0
+single-cloud_credential-06,Data inventory: The repository scan found a synthetic bearer token in a deployment manifest. The sample contains fictional information for a local security exercise.,1,0,0,0,0,0,0
+single-cloud_credential-06,Analyst summary: The repository scan found a synthetic bearer token in a deployment manifest. The note is included to demonstrate document-level classification.,1,0,0,0,0,0,0
+single-cloud_credential-06,Document excerpt: The repository scan found a synthetic bearer token in a deployment manifest. The sample contains fictional information for a local security exercise.,1,0,0,0,0,0,0
+single-cloud_credential-07,Data inventory: A cloud account recovery note refers to a credential stored in a shared folder. No external service receives the content during this exercise.,1,0,0,0,0,0,0
+single-cloud_credential-07,Analyst summary: A cloud account recovery note refers to a credential stored in a shared folder. This record is synthetic and must not be treated as real customer data.,1,0,0,0,0,0,0
+single-cloud_credential-07,Document excerpt: A cloud account recovery note refers to a credential stored in a shared folder. No external service receives the content during this exercise.,1,0,0,0,0,0,0
+single-cloud_credential-07,Cloud object note: A cloud account recovery note refers to a credential stored in a shared folder. This record is synthetic and must not be treated as real customer data.,1,0,0,0,0,0,0
+single-cloud_credential-08,Analyst summary: The support attachment contains a test secret assignment for a service account. The sample contains fictional information for a local security exercise.,1,0,0,0,0,0,0
+single-cloud_credential-08,Document excerpt: The support attachment contains a test secret assignment for a service account. The note is included to demonstrate document-level classification.,1,0,0,0,0,0,0
+single-cloud_credential-08,Cloud object note: The support attachment contains a test secret assignment for a service account. The sample contains fictional information for a local security exercise.,1,0,0,0,0,0,0
+single-cloud_credential-08,Security review: The support attachment contains a test secret assignment for a service account. The note is included to demonstrate document-level classification.,1,0,0,0,0,0,0
+single-cloud_credential-09,Document excerpt: A CI pipeline variable contains a synthetic access token that needs rotation. This record is synthetic and must not be treated as real customer data.,1,0,0,0,0,0,0
+single-cloud_credential-09,Cloud object note: A CI pipeline variable contains a synthetic access token that needs rotation. No external service receives the content during this exercise.,1,0,0,0,0,0,0
+single-cloud_credential-09,Security review: A CI pipeline variable contains a synthetic access token that needs rotation. This record is synthetic and must not be treated as real customer data.,1,0,0,0,0,0,0
+single-cloud_credential-09,Storage review: A CI pipeline variable contains a synthetic access token that needs rotation. No external service receives the content during this exercise.,1,0,0,0,0,0,0
+single-cloud_credential-10,Cloud object note: The infrastructure inventory points to a private key file used by a workload. The note is included to demonstrate document-level classification.,1,0,0,0,0,0,0
+single-cloud_credential-10,Security review: The infrastructure inventory points to a private key file used by a workload. The sample contains fictional information for a local security exercise.,1,0,0,0,0,0,0
+single-cloud_credential-10,Storage review: The infrastructure inventory points to a private key file used by a workload. The note is included to demonstrate document-level classification.,1,0,0,0,0,0,0
+single-cloud_credential-10,Data inventory: The infrastructure inventory points to a private key file used by a workload. The sample contains fictional information for a local security exercise.,1,0,0,0,0,0,0
+single-cloud_credential-11,Security review: A configuration sample includes a test password and a note about secret rotation. No external service receives the content during this exercise.,1,0,0,0,0,0,0
+single-cloud_credential-11,Storage review: A configuration sample includes a test password and a note about secret rotation. This record is synthetic and must not be treated as real customer data.,1,0,0,0,0,0,0
+single-cloud_credential-11,Data inventory: A configuration sample includes a test password and a note about secret rotation. No external service receives the content during this exercise.,1,0,0,0,0,0,0
+single-cloud_credential-11,Analyst summary: A configuration sample includes a test password and a note about secret rotation. This record is synthetic and must not be treated as real customer data.,1,0,0,0,0,0,0
+single-payment_card-00,Storage review: The transaction export includes a cardholder account and payment card details. The sample contains fictional information for a local security exercise.,0,1,0,0,0,0,0
+single-payment_card-00,Data inventory: The transaction export includes a cardholder account and payment card details. The note is included to demonstrate document-level classification.,0,1,0,0,0,0,0
+single-payment_card-00,Analyst summary: The transaction export includes a cardholder account and payment card details. The sample contains fictional information for a local security exercise.,0,1,0,0,0,0,0
+single-payment_card-00,Document excerpt: The transaction export includes a cardholder account and payment card details. The note is included to demonstrate document-level classification.,0,1,0,0,0,0,0
+single-payment_card-01,Data inventory: A billing record stores a synthetic card number placeholder [SYNTHETIC_CARD]. This record is synthetic and must not be treated as real customer data.,0,1,0,0,0,0,0
+single-payment_card-01,Analyst summary: A billing record stores a synthetic card number placeholder [SYNTHETIC_CARD]. No external service receives the content during this exercise.,0,1,0,0,0,0,0
+single-payment_card-01,Document excerpt: A billing record stores a synthetic card number placeholder [SYNTHETIC_CARD]. This record is synthetic and must not be treated as real customer data.,0,1,0,0,0,0,0
+single-payment_card-01,Cloud object note: A billing record stores a synthetic card number placeholder [SYNTHETIC_CARD]. No external service receives the content during this exercise.,0,1,0,0,0,0,0
+single-payment_card-02,Analyst summary: The checkout support file contains payment card data for a customer order. The note is included to demonstrate document-level classification.,0,1,0,0,0,0,0
+single-payment_card-02,Document excerpt: The checkout support file contains payment card data for a customer order. The sample contains fictional information for a local security exercise.,0,1,0,0,0,0,0
+single-payment_card-02,Cloud object note: The checkout support file contains payment card data for a customer order. The note is included to demonstrate document-level classification.,0,1,0,0,0,0,0
+single-payment_card-02,Security review: The checkout support file contains payment card data for a customer order. The sample contains fictional information for a local security exercise.,0,1,0,0,0,0,0
+single-payment_card-03,Document excerpt: The finance attachment contains cardholder records and a payment authorization reference. No external service receives the content during this exercise.,0,1,0,0,0,0,0
+single-payment_card-03,Cloud object note: The finance attachment contains cardholder records and a payment authorization reference. This record is synthetic and must not be treated as real customer data.,0,1,0,0,0,0,0
+single-payment_card-03,Security review: The finance attachment contains cardholder records and a payment authorization reference. No external service receives the content during this exercise.,0,1,0,0,0,0,0
+single-payment_card-03,Storage review: The finance attachment contains cardholder records and a payment authorization reference. This record is synthetic and must not be treated as real customer data.,0,1,0,0,0,0,0
+single-payment_card-04,Cloud object note: A compliance review found payment card fields in the order archive. The sample contains fictional information for a local security exercise.,0,1,0,0,0,0,0
+single-payment_card-04,Security review: A compliance review found payment card fields in the order archive. The note is included to demonstrate document-level classification.,0,1,0,0,0,0,0
+single-payment_card-04,Storage review: A compliance review found payment card fields in the order archive. The sample contains fictional information for a local security exercise.,0,1,0,0,0,0,0
+single-payment_card-04,Data inventory: A compliance review found payment card fields in the order archive. The note is included to demonstrate document-level classification.,0,1,0,0,0,0,0
+single-payment_card-05,Security review: The merchant report includes a synthetic card account used in a test transaction. This record is synthetic and must not be treated as real customer data.,0,1,0,0,0,0,0
+single-payment_card-05,Storage review: The merchant report includes a synthetic card account used in a test transaction. No external service receives the content during this exercise.,0,1,0,0,0,0,0
+single-payment_card-05,Data inventory: The merchant report includes a synthetic card account used in a test transaction. This record is synthetic and must not be treated as real customer data.,0,1,0,0,0,0,0
+single-payment_card-05,Analyst summary: The merchant report includes a synthetic card account used in a test transaction. No external service receives the content during this exercise.,0,1,0,0,0,0,0
+single-payment_card-06,Storage review: The customer invoice export contains a payment card number field. The note is included to demonstrate document-level classification.,0,1,0,0,0,0,0
+single-payment_card-06,Data inventory: The customer invoice export contains a payment card number field. The sample contains fictional information for a local security exercise.,0,1,0,0,0,0,0
+single-payment_card-06,Analyst summary: The customer invoice export contains a payment card number field. The note is included to demonstrate document-level classification.,0,1,0,0,0,0,0
+single-payment_card-06,Document excerpt: The customer invoice export contains a payment card number field. The sample contains fictional information for a local security exercise.,0,1,0,0,0,0,0
+single-payment_card-07,Data inventory: The settlement file refers to cardholder data retained by the billing system. No external service receives the content during this exercise.,0,1,0,0,0,0,0
+single-payment_card-07,Analyst summary: The settlement file refers to cardholder data retained by the billing system. This record is synthetic and must not be treated as real customer data.,0,1,0,0,0,0,0
+single-payment_card-07,Document excerpt: The settlement file refers to cardholder data retained by the billing system. No external service receives the content during this exercise.,0,1,0,0,0,0,0
+single-payment_card-07,Cloud object note: The settlement file refers to cardholder data retained by the billing system. This record is synthetic and must not be treated as real customer data.,0,1,0,0,0,0,0
+single-payment_card-08,Analyst summary: A support case includes payment details associated with a returned purchase. The sample contains fictional information for a local security exercise.,0,1,0,0,0,0,0
+single-payment_card-08,Document excerpt: A support case includes payment details associated with a returned purchase. The note is included to demonstrate document-level classification.,0,1,0,0,0,0,0
+single-payment_card-08,Cloud object note: A support case includes payment details associated with a returned purchase. The sample contains fictional information for a local security exercise.,0,1,0,0,0,0,0
+single-payment_card-08,Security review: A support case includes payment details associated with a returned purchase. The note is included to demonstrate document-level classification.,0,1,0,0,0,0,0
+single-payment_card-09,Document excerpt: The account record stores card expiry and a synthetic payment number. This record is synthetic and must not be treated as real customer data.,0,1,0,0,0,0,0
+single-payment_card-09,Cloud object note: The account record stores card expiry and a synthetic payment number. No external service receives the content during this exercise.,0,1,0,0,0,0,0
+single-payment_card-09,Security review: The account record stores card expiry and a synthetic payment number. This record is synthetic and must not be treated as real customer data.,0,1,0,0,0,0,0
+single-payment_card-09,Storage review: The account record stores card expiry and a synthetic payment number. No external service receives the content during this exercise.,0,1,0,0,0,0,0
+single-payment_card-10,Cloud object note: A test dataset describes payment card data collected during checkout. The note is included to demonstrate document-level classification.,0,1,0,0,0,0,0
+single-payment_card-10,Security review: A test dataset describes payment card data collected during checkout. The sample contains fictional information for a local security exercise.,0,1,0,0,0,0,0
+single-payment_card-10,Storage review: A test dataset describes payment card data collected during checkout. The note is included to demonstrate document-level classification.,0,1,0,0,0,0,0
+single-payment_card-10,Data inventory: A test dataset describes payment card data collected during checkout. The sample contains fictional information for a local security exercise.,0,1,0,0,0,0,0
+single-payment_card-11,Security review: The billing workspace contains cardholder information that needs restricted access. No external service receives the content during this exercise.,0,1,0,0,0,0,0
+single-payment_card-11,Storage review: The billing workspace contains cardholder information that needs restricted access. This record is synthetic and must not be treated as real customer data.,0,1,0,0,0,0,0
+single-payment_card-11,Data inventory: The billing workspace contains cardholder information that needs restricted access. No external service receives the content during this exercise.,0,1,0,0,0,0,0
+single-payment_card-11,Analyst summary: The billing workspace contains cardholder information that needs restricted access. This record is synthetic and must not be treated as real customer data.,0,1,0,0,0,0,0
+single-government_id-00,Storage review: The employee onboarding file contains a government tax identifier field. The sample contains fictional information for a local security exercise.,0,0,1,0,0,0,0
+single-government_id-00,Data inventory: The employee onboarding file contains a government tax identifier field. The note is included to demonstrate document-level classification.,0,0,1,0,0,0,0
+single-government_id-00,Analyst summary: The employee onboarding file contains a government tax identifier field. The sample contains fictional information for a local security exercise.,0,0,1,0,0,0,0
+single-government_id-00,Document excerpt: The employee onboarding file contains a government tax identifier field. The note is included to demonstrate document-level classification.,0,0,1,0,0,0,0
+single-government_id-01,Data inventory: A benefits record stores a synthetic national identity number placeholder. This record is synthetic and must not be treated as real customer data.,0,0,1,0,0,0,0
+single-government_id-01,Analyst summary: A benefits record stores a synthetic national identity number placeholder. No external service receives the content during this exercise.,0,0,1,0,0,0,0
+single-government_id-01,Document excerpt: A benefits record stores a synthetic national identity number placeholder. This record is synthetic and must not be treated as real customer data.,0,0,1,0,0,0,0
+single-government_id-01,Cloud object note: A benefits record stores a synthetic national identity number placeholder. No external service receives the content during this exercise.,0,0,1,0,0,0,0
+single-government_id-02,Analyst summary: The customer profile includes a social security number field for verification. The note is included to demonstrate document-level classification.,0,0,1,0,0,0,0
+single-government_id-02,Document excerpt: The customer profile includes a social security number field for verification. The sample contains fictional information for a local security exercise.,0,0,1,0,0,0,0
+single-government_id-02,Cloud object note: The customer profile includes a social security number field for verification. The note is included to demonstrate document-level classification.,0,0,1,0,0,0,0
+single-government_id-02,Security review: The customer profile includes a social security number field for verification. The sample contains fictional information for a local security exercise.,0,0,1,0,0,0,0
+single-government_id-03,Document excerpt: The claims attachment contains a government-issued identity number. No external service receives the content during this exercise.,0,0,1,0,0,0,0
+single-government_id-03,Cloud object note: The claims attachment contains a government-issued identity number. This record is synthetic and must not be treated as real customer data.,0,0,1,0,0,0,0
+single-government_id-03,Security review: The claims attachment contains a government-issued identity number. No external service receives the content during this exercise.,0,0,1,0,0,0,0
+single-government_id-03,Storage review: The claims attachment contains a government-issued identity number. This record is synthetic and must not be treated as real customer data.,0,0,1,0,0,0,0
+single-government_id-04,Cloud object note: The HR export includes a passport identifier and date of birth field. The sample contains fictional information for a local security exercise.,0,0,1,0,0,0,0
+single-government_id-04,Security review: The HR export includes a passport identifier and date of birth field. The note is included to demonstrate document-level classification.,0,0,1,0,0,0,0
+single-government_id-04,Storage review: The HR export includes a passport identifier and date of birth field. The sample contains fictional information for a local security exercise.,0,0,1,0,0,0,0
+single-government_id-04,Data inventory: The HR export includes a passport identifier and date of birth field. The note is included to demonstrate document-level classification.,0,0,1,0,0,0,0
+single-government_id-05,Security review: An account recovery file references a driver's license identifier. This record is synthetic and must not be treated as real customer data.,0,0,1,0,0,0,0
+single-government_id-05,Storage review: An account recovery file references a driver's license identifier. No external service receives the content during this exercise.,0,0,1,0,0,0,0
+single-government_id-05,Data inventory: An account recovery file references a driver's license identifier. This record is synthetic and must not be treated as real customer data.,0,0,1,0,0,0,0
+single-government_id-05,Analyst summary: An account recovery file references a driver's license identifier. No external service receives the content during this exercise.,0,0,1,0,0,0,0
+single-government_id-06,Storage review: The payroll archive contains a synthetic taxpayer identification record. The note is included to demonstrate document-level classification.,0,0,1,0,0,0,0
+single-government_id-06,Data inventory: The payroll archive contains a synthetic taxpayer identification record. The sample contains fictional information for a local security exercise.,0,0,1,0,0,0,0
+single-government_id-06,Analyst summary: The payroll archive contains a synthetic taxpayer identification record. The note is included to demonstrate document-level classification.,0,0,1,0,0,0,0
+single-government_id-06,Document excerpt: The payroll archive contains a synthetic taxpayer identification record. The sample contains fictional information for a local security exercise.,0,0,1,0,0,0,0
+single-government_id-07,Data inventory: The identity verification note includes a government ID value placeholder. No external service receives the content during this exercise.,0,0,1,0,0,0,0
+single-government_id-07,Analyst summary: The identity verification note includes a government ID value placeholder. This record is synthetic and must not be treated as real customer data.,0,0,1,0,0,0,0
+single-government_id-07,Document excerpt: The identity verification note includes a government ID value placeholder. No external service receives the content during this exercise.,0,0,1,0,0,0,0
+single-government_id-07,Cloud object note: The identity verification note includes a government ID value placeholder. This record is synthetic and must not be treated as real customer data.,0,0,1,0,0,0,0
+single-government_id-08,Analyst summary: A benefits spreadsheet lists national identity data for enrolled employees. The sample contains fictional information for a local security exercise.,0,0,1,0,0,0,0
+single-government_id-08,Document excerpt: A benefits spreadsheet lists national identity data for enrolled employees. The note is included to demonstrate document-level classification.,0,0,1,0,0,0,0
+single-government_id-08,Cloud object note: A benefits spreadsheet lists national identity data for enrolled employees. The sample contains fictional information for a local security exercise.,0,0,1,0,0,0,0
+single-government_id-08,Security review: A benefits spreadsheet lists national identity data for enrolled employees. The note is included to demonstrate document-level classification.,0,0,1,0,0,0,0
+single-government_id-09,Document excerpt: The customer application asks for a government-issued identification number. This record is synthetic and must not be treated as real customer data.,0,0,1,0,0,0,0
+single-government_id-09,Cloud object note: The customer application asks for a government-issued identification number. No external service receives the content during this exercise.,0,0,1,0,0,0,0
+single-government_id-09,Security review: The customer application asks for a government-issued identification number. This record is synthetic and must not be treated as real customer data.,0,0,1,0,0,0,0
+single-government_id-09,Storage review: The customer application asks for a government-issued identification number. No external service receives the content during this exercise.,0,0,1,0,0,0,0
+single-government_id-10,Cloud object note: The onboarding document includes a synthetic social insurance identifier. The note is included to demonstrate document-level classification.,0,0,1,0,0,0,0
+single-government_id-10,Security review: The onboarding document includes a synthetic social insurance identifier. The sample contains fictional information for a local security exercise.,0,0,1,0,0,0,0
+single-government_id-10,Storage review: The onboarding document includes a synthetic social insurance identifier. The note is included to demonstrate document-level classification.,0,0,1,0,0,0,0
+single-government_id-10,Data inventory: The onboarding document includes a synthetic social insurance identifier. The sample contains fictional information for a local security exercise.,0,0,1,0,0,0,0
+single-government_id-11,Security review: A restricted identity record stores a passport number and issuing country. No external service receives the content during this exercise.,0,0,1,0,0,0,0
+single-government_id-11,Storage review: A restricted identity record stores a passport number and issuing country. This record is synthetic and must not be treated as real customer data.,0,0,1,0,0,0,0
+single-government_id-11,Data inventory: A restricted identity record stores a passport number and issuing country. No external service receives the content during this exercise.,0,0,1,0,0,0,0
+single-government_id-11,Analyst summary: A restricted identity record stores a passport number and issuing country. This record is synthetic and must not be treated as real customer data.,0,0,1,0,0,0,0
+single-email_address-00,Storage review: The support export includes the customer's direct contact email address. The sample contains fictional information for a local security exercise.,0,0,0,1,0,0,0
+single-email_address-00,Data inventory: The support export includes the customer's direct contact email address. The note is included to demonstrate document-level classification.,0,0,0,1,0,0,0
+single-email_address-00,Analyst summary: The support export includes the customer's direct contact email address. The sample contains fictional information for a local security exercise.,0,0,0,1,0,0,0
+single-email_address-00,Document excerpt: The support export includes the customer's direct contact email address. The note is included to demonstrate document-level classification.,0,0,0,1,0,0,0
+single-email_address-01,Data inventory: A user profile stores an email address for account recovery. This record is synthetic and must not be treated as real customer data.,0,0,0,1,0,0,0
+single-email_address-01,Analyst summary: A user profile stores an email address for account recovery. No external service receives the content during this exercise.,0,0,0,1,0,0,0
+single-email_address-01,Document excerpt: A user profile stores an email address for account recovery. This record is synthetic and must not be treated as real customer data.,0,0,0,1,0,0,0
+single-email_address-01,Cloud object note: A user profile stores an email address for account recovery. No external service receives the content during this exercise.,0,0,0,1,0,0,0
+single-email_address-02,Analyst summary: The sales list contains named contacts and their business email addresses. The note is included to demonstrate document-level classification.,0,0,0,1,0,0,0
+single-email_address-02,Document excerpt: The sales list contains named contacts and their business email addresses. The sample contains fictional information for a local security exercise.,0,0,0,1,0,0,0
+single-email_address-02,Cloud object note: The sales list contains named contacts and their business email addresses. The note is included to demonstrate document-level classification.,0,0,0,1,0,0,0
+single-email_address-02,Security review: The sales list contains named contacts and their business email addresses. The sample contains fictional information for a local security exercise.,0,0,0,1,0,0,0
+single-email_address-03,Document excerpt: A service ticket records a customer's private email contact information. No external service receives the content during this exercise.,0,0,0,1,0,0,0
+single-email_address-03,Cloud object note: A service ticket records a customer's private email contact information. This record is synthetic and must not be treated as real customer data.,0,0,0,1,0,0,0
+single-email_address-03,Security review: A service ticket records a customer's private email contact information. No external service receives the content during this exercise.,0,0,0,1,0,0,0
+single-email_address-03,Storage review: A service ticket records a customer's private email contact information. This record is synthetic and must not be treated as real customer data.,0,0,0,1,0,0,0
+single-email_address-04,Cloud object note: The staff directory includes work email addresses linked to employee names. The sample contains fictional information for a local security exercise.,0,0,0,1,0,0,0
+single-email_address-04,Security review: The staff directory includes work email addresses linked to employee names. The note is included to demonstrate document-level classification.,0,0,0,1,0,0,0
+single-email_address-04,Storage review: The staff directory includes work email addresses linked to employee names. The sample contains fictional information for a local security exercise.,0,0,0,1,0,0,0
+single-email_address-04,Data inventory: The staff directory includes work email addresses linked to employee names. The note is included to demonstrate document-level classification.,0,0,0,1,0,0,0
+single-email_address-05,Security review: A membership export stores an email address for each individual account. This record is synthetic and must not be treated as real customer data.,0,0,0,1,0,0,0
+single-email_address-05,Storage review: A membership export stores an email address for each individual account. No external service receives the content during this exercise.,0,0,0,1,0,0,0
+single-email_address-05,Data inventory: A membership export stores an email address for each individual account. This record is synthetic and must not be treated as real customer data.,0,0,0,1,0,0,0
+single-email_address-05,Analyst summary: A membership export stores an email address for each individual account. No external service receives the content during this exercise.,0,0,0,1,0,0,0
+single-email_address-06,Storage review: The notification log contains recipient email details for an account holder. The note is included to demonstrate document-level classification.,0,0,0,1,0,0,0
+single-email_address-06,Data inventory: The notification log contains recipient email details for an account holder. The sample contains fictional information for a local security exercise.,0,0,0,1,0,0,0
+single-email_address-06,Analyst summary: The notification log contains recipient email details for an account holder. The note is included to demonstrate document-level classification.,0,0,0,1,0,0,0
+single-email_address-06,Document excerpt: The notification log contains recipient email details for an account holder. The sample contains fictional information for a local security exercise.,0,0,0,1,0,0,0
+single-email_address-07,Data inventory: A customer record lists a personal email address and communication preference. No external service receives the content during this exercise.,0,0,0,1,0,0,0
+single-email_address-07,Analyst summary: A customer record lists a personal email address and communication preference. This record is synthetic and must not be treated as real customer data.,0,0,0,1,0,0,0
+single-email_address-07,Document excerpt: A customer record lists a personal email address and communication preference. No external service receives the content during this exercise.,0,0,0,1,0,0,0
+single-email_address-07,Cloud object note: A customer record lists a personal email address and communication preference. This record is synthetic and must not be treated as real customer data.,0,0,0,1,0,0,0
+single-email_address-08,Analyst summary: The registration file contains user email identifiers and consent status. The sample contains fictional information for a local security exercise.,0,0,0,1,0,0,0
+single-email_address-08,Document excerpt: The registration file contains user email identifiers and consent status. The note is included to demonstrate document-level classification.,0,0,0,1,0,0,0
+single-email_address-08,Cloud object note: The registration file contains user email identifiers and consent status. The sample contains fictional information for a local security exercise.,0,0,0,1,0,0,0
+single-email_address-08,Security review: The registration file contains user email identifiers and consent status. The note is included to demonstrate document-level classification.,0,0,0,1,0,0,0
+single-email_address-09,Document excerpt: A contact spreadsheet maps account owners to their email addresses. This record is synthetic and must not be treated as real customer data.,0,0,0,1,0,0,0
+single-email_address-09,Cloud object note: A contact spreadsheet maps account owners to their email addresses. No external service receives the content during this exercise.,0,0,0,1,0,0,0
+single-email_address-09,Security review: A contact spreadsheet maps account owners to their email addresses. This record is synthetic and must not be treated as real customer data.,0,0,0,1,0,0,0
+single-email_address-09,Storage review: A contact spreadsheet maps account owners to their email addresses. No external service receives the content during this exercise.,0,0,0,1,0,0,0
+single-email_address-10,Cloud object note: The profile backup includes a synthetic email field for each user. The note is included to demonstrate document-level classification.,0,0,0,1,0,0,0
+single-email_address-10,Security review: The profile backup includes a synthetic email field for each user. The sample contains fictional information for a local security exercise.,0,0,0,1,0,0,0
+single-email_address-10,Storage review: The profile backup includes a synthetic email field for each user. The note is included to demonstrate document-level classification.,0,0,0,1,0,0,0
+single-email_address-10,Data inventory: The profile backup includes a synthetic email field for each user. The sample contains fictional information for a local security exercise.,0,0,0,1,0,0,0
+single-email_address-11,Security review: A help desk attachment contains the email address of a named customer. No external service receives the content during this exercise.,0,0,0,1,0,0,0
+single-email_address-11,Storage review: A help desk attachment contains the email address of a named customer. This record is synthetic and must not be treated as real customer data.,0,0,0,1,0,0,0
+single-email_address-11,Data inventory: A help desk attachment contains the email address of a named customer. No external service receives the content during this exercise.,0,0,0,1,0,0,0
+single-email_address-11,Analyst summary: A help desk attachment contains the email address of a named customer. This record is synthetic and must not be treated as real customer data.,0,0,0,1,0,0,0
+single-phone_number-00,Storage review: The customer support export contains a direct phone number for callback. The sample contains fictional information for a local security exercise.,0,0,0,0,1,0,0
+single-phone_number-00,Data inventory: The customer support export contains a direct phone number for callback. The note is included to demonstrate document-level classification.,0,0,0,0,1,0,0
+single-phone_number-00,Analyst summary: The customer support export contains a direct phone number for callback. The sample contains fictional information for a local security exercise.,0,0,0,0,1,0,0
+single-phone_number-00,Document excerpt: The customer support export contains a direct phone number for callback. The note is included to demonstrate document-level classification.,0,0,0,0,1,0,0
+single-phone_number-01,Data inventory: A user profile stores a personal telephone number for verification. This record is synthetic and must not be treated as real customer data.,0,0,0,0,1,0,0
+single-phone_number-01,Analyst summary: A user profile stores a personal telephone number for verification. No external service receives the content during this exercise.,0,0,0,0,1,0,0
+single-phone_number-01,Document excerpt: A user profile stores a personal telephone number for verification. This record is synthetic and must not be treated as real customer data.,0,0,0,0,1,0,0
+single-phone_number-01,Cloud object note: A user profile stores a personal telephone number for verification. No external service receives the content during this exercise.,0,0,0,0,1,0,0
+single-phone_number-02,Analyst summary: The staff directory links employee names to mobile phone details. The note is included to demonstrate document-level classification.,0,0,0,0,1,0,0
+single-phone_number-02,Document excerpt: The staff directory links employee names to mobile phone details. The sample contains fictional information for a local security exercise.,0,0,0,0,1,0,0
+single-phone_number-02,Cloud object note: The staff directory links employee names to mobile phone details. The note is included to demonstrate document-level classification.,0,0,0,0,1,0,0
+single-phone_number-02,Security review: The staff directory links employee names to mobile phone details. The sample contains fictional information for a local security exercise.,0,0,0,0,1,0,0
+single-phone_number-03,Document excerpt: The appointment report includes patient phone numbers and contact times. No external service receives the content during this exercise.,0,0,0,0,1,0,0
+single-phone_number-03,Cloud object note: The appointment report includes patient phone numbers and contact times. This record is synthetic and must not be treated as real customer data.,0,0,0,0,1,0,0
+single-phone_number-03,Security review: The appointment report includes patient phone numbers and contact times. No external service receives the content during this exercise.,0,0,0,0,1,0,0
+single-phone_number-03,Storage review: The appointment report includes patient phone numbers and contact times. This record is synthetic and must not be treated as real customer data.,0,0,0,0,1,0,0
+single-phone_number-04,Cloud object note: A service ticket records a customer telephone number for follow-up. The sample contains fictional information for a local security exercise.,0,0,0,0,1,0,0
+single-phone_number-04,Security review: A service ticket records a customer telephone number for follow-up. The note is included to demonstrate document-level classification.,0,0,0,0,1,0,0
+single-phone_number-04,Storage review: A service ticket records a customer telephone number for follow-up. The sample contains fictional information for a local security exercise.,0,0,0,0,1,0,0
+single-phone_number-04,Data inventory: A service ticket records a customer telephone number for follow-up. The note is included to demonstrate document-level classification.,0,0,0,0,1,0,0
+single-phone_number-05,Security review: The account recovery file uses a phone number as a verification contact. This record is synthetic and must not be treated as real customer data.,0,0,0,0,1,0,0
+single-phone_number-05,Storage review: The account recovery file uses a phone number as a verification contact. No external service receives the content during this exercise.,0,0,0,0,1,0,0
+single-phone_number-05,Data inventory: The account recovery file uses a phone number as a verification contact. This record is synthetic and must not be treated as real customer data.,0,0,0,0,1,0,0
+single-phone_number-05,Analyst summary: The account recovery file uses a phone number as a verification contact. No external service receives the content during this exercise.,0,0,0,0,1,0,0
+single-phone_number-06,Storage review: A membership list contains mobile numbers associated with individual accounts. The note is included to demonstrate document-level classification.,0,0,0,0,1,0,0
+single-phone_number-06,Data inventory: A membership list contains mobile numbers associated with individual accounts. The sample contains fictional information for a local security exercise.,0,0,0,0,1,0,0
+single-phone_number-06,Analyst summary: A membership list contains mobile numbers associated with individual accounts. The note is included to demonstrate document-level classification.,0,0,0,0,1,0,0
+single-phone_number-06,Document excerpt: A membership list contains mobile numbers associated with individual accounts. The sample contains fictional information for a local security exercise.,0,0,0,0,1,0,0
+single-phone_number-07,Data inventory: The delivery export includes a recipient telephone number. No external service receives the content during this exercise.,0,0,0,0,1,0,0
+single-phone_number-07,Analyst summary: The delivery export includes a recipient telephone number. This record is synthetic and must not be treated as real customer data.,0,0,0,0,1,0,0
+single-phone_number-07,Document excerpt: The delivery export includes a recipient telephone number. No external service receives the content during this exercise.,0,0,0,0,1,0,0
+single-phone_number-07,Cloud object note: The delivery export includes a recipient telephone number. This record is synthetic and must not be treated as real customer data.,0,0,0,0,1,0,0
+single-phone_number-08,Analyst summary: A synthetic phone field appears in the customer profile backup. The sample contains fictional information for a local security exercise.,0,0,0,0,1,0,0
+single-phone_number-08,Document excerpt: A synthetic phone field appears in the customer profile backup. The note is included to demonstrate document-level classification.,0,0,0,0,1,0,0
+single-phone_number-08,Cloud object note: A synthetic phone field appears in the customer profile backup. The sample contains fictional information for a local security exercise.,0,0,0,0,1,0,0
+single-phone_number-08,Security review: A synthetic phone field appears in the customer profile backup. The note is included to demonstrate document-level classification.,0,0,0,0,1,0,0
+single-phone_number-09,Document excerpt: The HR contact sheet contains personal telephone information. This record is synthetic and must not be treated as real customer data.,0,0,0,0,1,0,0
+single-phone_number-09,Cloud object note: The HR contact sheet contains personal telephone information. No external service receives the content during this exercise.,0,0,0,0,1,0,0
+single-phone_number-09,Security review: The HR contact sheet contains personal telephone information. This record is synthetic and must not be treated as real customer data.,0,0,0,0,1,0,0
+single-phone_number-09,Storage review: The HR contact sheet contains personal telephone information. No external service receives the content during this exercise.,0,0,0,0,1,0,0
+single-phone_number-10,Cloud object note: An incident note includes a callback phone number for the reporting user. The note is included to demonstrate document-level classification.,0,0,0,0,1,0,0
+single-phone_number-10,Security review: An incident note includes a callback phone number for the reporting user. The sample contains fictional information for a local security exercise.,0,0,0,0,1,0,0
+single-phone_number-10,Storage review: An incident note includes a callback phone number for the reporting user. The note is included to demonstrate document-level classification.,0,0,0,0,1,0,0
+single-phone_number-10,Data inventory: An incident note includes a callback phone number for the reporting user. The sample contains fictional information for a local security exercise.,0,0,0,0,1,0,0
+single-phone_number-11,Security review: The reservation system stores phone contact details for each guest. No external service receives the content during this exercise.,0,0,0,0,1,0,0
+single-phone_number-11,Storage review: The reservation system stores phone contact details for each guest. This record is synthetic and must not be treated as real customer data.,0,0,0,0,1,0,0
+single-phone_number-11,Data inventory: The reservation system stores phone contact details for each guest. No external service receives the content during this exercise.,0,0,0,0,1,0,0
+single-phone_number-11,Analyst summary: The reservation system stores phone contact details for each guest. This record is synthetic and must not be treated as real customer data.,0,0,0,0,1,0,0
+single-health_information-00,Storage review: The clinical summary links a patient's diagnosis with their treatment plan. The sample contains fictional information for a local security exercise.,0,0,0,0,0,1,0
+single-health_information-00,Data inventory: The clinical summary links a patient's diagnosis with their treatment plan. The note is included to demonstrate document-level classification.,0,0,0,0,0,1,0
+single-health_information-00,Analyst summary: The clinical summary links a patient's diagnosis with their treatment plan. The sample contains fictional information for a local security exercise.,0,0,0,0,0,1,0
+single-health_information-00,Document excerpt: The clinical summary links a patient's diagnosis with their treatment plan. The note is included to demonstrate document-level classification.,0,0,0,0,0,1,0
+single-health_information-01,Data inventory: A benefits attachment lists a member's medication and care history. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,1,0
+single-health_information-01,Analyst summary: A benefits attachment lists a member's medication and care history. No external service receives the content during this exercise.,0,0,0,0,0,1,0
+single-health_information-01,Document excerpt: A benefits attachment lists a member's medication and care history. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,1,0
+single-health_information-01,Cloud object note: A benefits attachment lists a member's medication and care history. No external service receives the content during this exercise.,0,0,0,0,0,1,0
+single-health_information-02,Analyst summary: The claims record contains a synthetic diagnosis code and patient visit details. The note is included to demonstrate document-level classification.,0,0,0,0,0,1,0
+single-health_information-02,Document excerpt: The claims record contains a synthetic diagnosis code and patient visit details. The sample contains fictional information for a local security exercise.,0,0,0,0,0,1,0
+single-health_information-02,Cloud object note: The claims record contains a synthetic diagnosis code and patient visit details. The note is included to demonstrate document-level classification.,0,0,0,0,0,1,0
+single-health_information-02,Security review: The claims record contains a synthetic diagnosis code and patient visit details. The sample contains fictional information for a local security exercise.,0,0,0,0,0,1,0
+single-health_information-03,Document excerpt: The wellness file stores an individual's medical condition and appointment notes. No external service receives the content during this exercise.,0,0,0,0,0,1,0
+single-health_information-03,Cloud object note: The wellness file stores an individual's medical condition and appointment notes. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,1,0
+single-health_information-03,Security review: The wellness file stores an individual's medical condition and appointment notes. No external service receives the content during this exercise.,0,0,0,0,0,1,0
+single-health_information-03,Storage review: The wellness file stores an individual's medical condition and appointment notes. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,1,0
+single-health_information-04,Cloud object note: A restricted case report includes a patient's laboratory results. The sample contains fictional information for a local security exercise.,0,0,0,0,0,1,0
+single-health_information-04,Security review: A restricted case report includes a patient's laboratory results. The note is included to demonstrate document-level classification.,0,0,0,0,0,1,0
+single-health_information-04,Storage review: A restricted case report includes a patient's laboratory results. The sample contains fictional information for a local security exercise.,0,0,0,0,0,1,0
+single-health_information-04,Data inventory: A restricted case report includes a patient's laboratory results. The note is included to demonstrate document-level classification.,0,0,0,0,0,1,0
+single-health_information-05,Security review: The health plan export contains treatment history for enrolled members. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,1,0
+single-health_information-05,Storage review: The health plan export contains treatment history for enrolled members. No external service receives the content during this exercise.,0,0,0,0,0,1,0
+single-health_information-05,Data inventory: The health plan export contains treatment history for enrolled members. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,1,0
+single-health_information-05,Analyst summary: The health plan export contains treatment history for enrolled members. No external service receives the content during this exercise.,0,0,0,0,0,1,0
+single-health_information-06,Storage review: A care coordination note records symptoms and a clinician's assessment. The note is included to demonstrate document-level classification.,0,0,0,0,0,1,0
+single-health_information-06,Data inventory: A care coordination note records symptoms and a clinician's assessment. The sample contains fictional information for a local security exercise.,0,0,0,0,0,1,0
+single-health_information-06,Analyst summary: A care coordination note records symptoms and a clinician's assessment. The note is included to demonstrate document-level classification.,0,0,0,0,0,1,0
+single-health_information-06,Document excerpt: A care coordination note records symptoms and a clinician's assessment. The sample contains fictional information for a local security exercise.,0,0,0,0,0,1,0
+single-health_information-07,Data inventory: The medical archive describes an individual's prescription and diagnosis. No external service receives the content during this exercise.,0,0,0,0,0,1,0
+single-health_information-07,Analyst summary: The medical archive describes an individual's prescription and diagnosis. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,1,0
+single-health_information-07,Document excerpt: The medical archive describes an individual's prescription and diagnosis. No external service receives the content during this exercise.,0,0,0,0,0,1,0
+single-health_information-07,Cloud object note: The medical archive describes an individual's prescription and diagnosis. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,1,0
+single-health_information-08,Analyst summary: The insurance document links a member identity to a health claim. The sample contains fictional information for a local security exercise.,0,0,0,0,0,1,0
+single-health_information-08,Document excerpt: The insurance document links a member identity to a health claim. The note is included to demonstrate document-level classification.,0,0,0,0,0,1,0
+single-health_information-08,Cloud object note: The insurance document links a member identity to a health claim. The sample contains fictional information for a local security exercise.,0,0,0,0,0,1,0
+single-health_information-08,Security review: The insurance document links a member identity to a health claim. The note is included to demonstrate document-level classification.,0,0,0,0,0,1,0
+single-health_information-09,Document excerpt: A synthetic patient record includes procedure and recovery information. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,1,0
+single-health_information-09,Cloud object note: A synthetic patient record includes procedure and recovery information. No external service receives the content during this exercise.,0,0,0,0,0,1,0
+single-health_information-09,Security review: A synthetic patient record includes procedure and recovery information. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,1,0
+single-health_information-09,Storage review: A synthetic patient record includes procedure and recovery information. No external service receives the content during this exercise.,0,0,0,0,0,1,0
+single-health_information-10,Cloud object note: The clinic attachment contains medical history and provider notes. The note is included to demonstrate document-level classification.,0,0,0,0,0,1,0
+single-health_information-10,Security review: The clinic attachment contains medical history and provider notes. The sample contains fictional information for a local security exercise.,0,0,0,0,0,1,0
+single-health_information-10,Storage review: The clinic attachment contains medical history and provider notes. The note is included to demonstrate document-level classification.,0,0,0,0,0,1,0
+single-health_information-10,Data inventory: The clinic attachment contains medical history and provider notes. The sample contains fictional information for a local security exercise.,0,0,0,0,0,1,0
+single-health_information-11,Security review: A care record associates a patient with a sensitive health condition. No external service receives the content during this exercise.,0,0,0,0,0,1,0
+single-health_information-11,Storage review: A care record associates a patient with a sensitive health condition. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,1,0
+single-health_information-11,Data inventory: A care record associates a patient with a sensitive health condition. No external service receives the content during this exercise.,0,0,0,0,0,1,0
+single-health_information-11,Analyst summary: A care record associates a patient with a sensitive health condition. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,1,0
+single-financial_account-00,Storage review: The treasury export contains bank account and routing information. The sample contains fictional information for a local security exercise.,0,0,0,0,0,0,1
+single-financial_account-00,Data inventory: The treasury export contains bank account and routing information. The note is included to demonstrate document-level classification.,0,0,0,0,0,0,1
+single-financial_account-00,Analyst summary: The treasury export contains bank account and routing information. The sample contains fictional information for a local security exercise.,0,0,0,0,0,0,1
+single-financial_account-00,Document excerpt: The treasury export contains bank account and routing information. The note is included to demonstrate document-level classification.,0,0,0,0,0,0,1
+single-financial_account-01,Data inventory: A customer finance record stores an account balance and transaction history. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,1
+single-financial_account-01,Analyst summary: A customer finance record stores an account balance and transaction history. No external service receives the content during this exercise.,0,0,0,0,0,0,1
+single-financial_account-01,Document excerpt: A customer finance record stores an account balance and transaction history. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,1
+single-financial_account-01,Cloud object note: A customer finance record stores an account balance and transaction history. No external service receives the content during this exercise.,0,0,0,0,0,0,1
+single-financial_account-02,Analyst summary: The payroll file includes bank deposit details for employees. The note is included to demonstrate document-level classification.,0,0,0,0,0,0,1
+single-financial_account-02,Document excerpt: The payroll file includes bank deposit details for employees. The sample contains fictional information for a local security exercise.,0,0,0,0,0,0,1
+single-financial_account-02,Cloud object note: The payroll file includes bank deposit details for employees. The note is included to demonstrate document-level classification.,0,0,0,0,0,0,1
+single-financial_account-02,Security review: The payroll file includes bank deposit details for employees. The sample contains fictional information for a local security exercise.,0,0,0,0,0,0,1
+single-financial_account-03,Document excerpt: A loan application contains an individual's income and financial account data. No external service receives the content during this exercise.,0,0,0,0,0,0,1
+single-financial_account-03,Cloud object note: A loan application contains an individual's income and financial account data. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,1
+single-financial_account-03,Security review: A loan application contains an individual's income and financial account data. No external service receives the content during this exercise.,0,0,0,0,0,0,1
+single-financial_account-03,Storage review: A loan application contains an individual's income and financial account data. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,1
+single-financial_account-04,Cloud object note: The reconciliation report lists account numbers and payment transfers. The sample contains fictional information for a local security exercise.,0,0,0,0,0,0,1
+single-financial_account-04,Security review: The reconciliation report lists account numbers and payment transfers. The note is included to demonstrate document-level classification.,0,0,0,0,0,0,1
+single-financial_account-04,Storage review: The reconciliation report lists account numbers and payment transfers. The sample contains fictional information for a local security exercise.,0,0,0,0,0,0,1
+single-financial_account-04,Data inventory: The reconciliation report lists account numbers and payment transfers. The note is included to demonstrate document-level classification.,0,0,0,0,0,0,1
+single-financial_account-05,Security review: A synthetic banking record includes an account identifier and balance. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,1
+single-financial_account-05,Storage review: A synthetic banking record includes an account identifier and balance. No external service receives the content during this exercise.,0,0,0,0,0,0,1
+single-financial_account-05,Data inventory: A synthetic banking record includes an account identifier and balance. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,1
+single-financial_account-05,Analyst summary: A synthetic banking record includes an account identifier and balance. No external service receives the content during this exercise.,0,0,0,0,0,0,1
+single-financial_account-06,Storage review: The finance archive stores wire transfer instructions for a business account. The note is included to demonstrate document-level classification.,0,0,0,0,0,0,1
+single-financial_account-06,Data inventory: The finance archive stores wire transfer instructions for a business account. The sample contains fictional information for a local security exercise.,0,0,0,0,0,0,1
+single-financial_account-06,Analyst summary: The finance archive stores wire transfer instructions for a business account. The note is included to demonstrate document-level classification.,0,0,0,0,0,0,1
+single-financial_account-06,Document excerpt: The finance archive stores wire transfer instructions for a business account. The sample contains fictional information for a local security exercise.,0,0,0,0,0,0,1
+single-financial_account-07,Data inventory: A billing profile contains bank debit details associated with a customer. No external service receives the content during this exercise.,0,0,0,0,0,0,1
+single-financial_account-07,Analyst summary: A billing profile contains bank debit details associated with a customer. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,1
+single-financial_account-07,Document excerpt: A billing profile contains bank debit details associated with a customer. No external service receives the content during this exercise.,0,0,0,0,0,0,1
+single-financial_account-07,Cloud object note: A billing profile contains bank debit details associated with a customer. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,1
+single-financial_account-08,Analyst summary: The investment summary describes an individual's portfolio and holdings. The sample contains fictional information for a local security exercise.,0,0,0,0,0,0,1
+single-financial_account-08,Document excerpt: The investment summary describes an individual's portfolio and holdings. The note is included to demonstrate document-level classification.,0,0,0,0,0,0,1
+single-financial_account-08,Cloud object note: The investment summary describes an individual's portfolio and holdings. The sample contains fictional information for a local security exercise.,0,0,0,0,0,0,1
+single-financial_account-08,Security review: The investment summary describes an individual's portfolio and holdings. The note is included to demonstrate document-level classification.,0,0,0,0,0,0,1
+single-financial_account-09,Document excerpt: The accounts payable file includes supplier bank account information. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,1
+single-financial_account-09,Cloud object note: The accounts payable file includes supplier bank account information. No external service receives the content during this exercise.,0,0,0,0,0,0,1
+single-financial_account-09,Security review: The accounts payable file includes supplier bank account information. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,1
+single-financial_account-09,Storage review: The accounts payable file includes supplier bank account information. No external service receives the content during this exercise.,0,0,0,0,0,0,1
+single-financial_account-10,Cloud object note: A credit review note contains financial account and repayment details. The note is included to demonstrate document-level classification.,0,0,0,0,0,0,1
+single-financial_account-10,Security review: A credit review note contains financial account and repayment details. The sample contains fictional information for a local security exercise.,0,0,0,0,0,0,1
+single-financial_account-10,Storage review: A credit review note contains financial account and repayment details. The note is included to demonstrate document-level classification.,0,0,0,0,0,0,1
+single-financial_account-10,Data inventory: A credit review note contains financial account and repayment details. The sample contains fictional information for a local security exercise.,0,0,0,0,0,0,1
+single-financial_account-11,Security review: The payment reconciliation includes customer bank transfer references. No external service receives the content during this exercise.,0,0,0,0,0,0,1
+single-financial_account-11,Storage review: The payment reconciliation includes customer bank transfer references. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,1
+single-financial_account-11,Data inventory: The payment reconciliation includes customer bank transfer references. No external service receives the content during this exercise.,0,0,0,0,0,0,1
+single-financial_account-11,Analyst summary: The payment reconciliation includes customer bank transfer references. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,1
+multi-00,Storage review: The customer profile stores an email contact and callback phone number. The sample contains fictional information for a local security exercise.,0,0,0,1,1,0,0
+multi-00,Data inventory: The customer profile stores an email contact and callback phone number. The note is included to demonstrate document-level classification.,0,0,0,1,1,0,0
+multi-00,Analyst summary: The customer profile stores an email contact and callback phone number. The sample contains fictional information for a local security exercise.,0,0,0,1,1,0,0
+multi-00,Document excerpt: The customer profile stores an email contact and callback phone number. The note is included to demonstrate document-level classification.,0,0,0,1,1,0,0
+multi-01,Data inventory: The onboarding bundle includes a service credential and an identity verification field. This record is synthetic and must not be treated as real customer data.,1,0,1,0,0,0,0
+multi-01,Analyst summary: The onboarding bundle includes a service credential and an identity verification field. No external service receives the content during this exercise.,1,0,1,0,0,0,0
+multi-01,Document excerpt: The onboarding bundle includes a service credential and an identity verification field. This record is synthetic and must not be treated as real customer data.,1,0,1,0,0,0,0
+multi-01,Cloud object note: The onboarding bundle includes a service credential and an identity verification field. No external service receives the content during this exercise.,1,0,1,0,0,0,0
+multi-02,Analyst summary: The billing export links payment card details with a customer's email contact. The note is included to demonstrate document-level classification.,0,1,0,1,0,0,0
+multi-02,Document excerpt: The billing export links payment card details with a customer's email contact. The sample contains fictional information for a local security exercise.,0,1,0,1,0,0,0
+multi-02,Cloud object note: The billing export links payment card details with a customer's email contact. The note is included to demonstrate document-level classification.,0,1,0,1,0,0,0
+multi-02,Security review: The billing export links payment card details with a customer's email contact. The sample contains fictional information for a local security exercise.,0,1,0,1,0,0,0
+multi-03,Document excerpt: The patient file links a government identity record to diagnosis and treatment notes. No external service receives the content during this exercise.,0,0,1,0,0,1,0
+multi-03,Cloud object note: The patient file links a government identity record to diagnosis and treatment notes. This record is synthetic and must not be treated as real customer data.,0,0,1,0,0,1,0
+multi-03,Security review: The patient file links a government identity record to diagnosis and treatment notes. No external service receives the content during this exercise.,0,0,1,0,0,1,0
+multi-03,Storage review: The patient file links a government identity record to diagnosis and treatment notes. This record is synthetic and must not be treated as real customer data.,0,0,1,0,0,1,0
+multi-04,Cloud object note: The loan archive combines bank account details with a government identity field. The sample contains fictional information for a local security exercise.,0,0,1,0,0,0,1
+multi-04,Security review: The loan archive combines bank account details with a government identity field. The note is included to demonstrate document-level classification.,0,0,1,0,0,0,1
+multi-04,Storage review: The loan archive combines bank account details with a government identity field. The sample contains fictional information for a local security exercise.,0,0,1,0,0,0,1
+multi-04,Data inventory: The loan archive combines bank account details with a government identity field. The note is included to demonstrate document-level classification.,0,0,1,0,0,0,1
+multi-05,Security review: The support attachment contains a synthetic API secret and user email address. This record is synthetic and must not be treated as real customer data.,1,0,0,1,0,0,0
+multi-05,Storage review: The support attachment contains a synthetic API secret and user email address. No external service receives the content during this exercise.,1,0,0,1,0,0,0
+multi-05,Data inventory: The support attachment contains a synthetic API secret and user email address. This record is synthetic and must not be treated as real customer data.,1,0,0,1,0,0,0
+multi-05,Analyst summary: The support attachment contains a synthetic API secret and user email address. No external service receives the content during this exercise.,1,0,0,1,0,0,0
+multi-06,Storage review: The checkout record includes cardholder payment details and a telephone contact. The note is included to demonstrate document-level classification.,0,1,0,0,1,0,0
+multi-06,Data inventory: The checkout record includes cardholder payment details and a telephone contact. The sample contains fictional information for a local security exercise.,0,1,0,0,1,0,0
+multi-06,Analyst summary: The checkout record includes cardholder payment details and a telephone contact. The note is included to demonstrate document-level classification.,0,1,0,0,1,0,0
+multi-06,Document excerpt: The checkout record includes cardholder payment details and a telephone contact. The sample contains fictional information for a local security exercise.,0,1,0,0,1,0,0
+multi-07,Data inventory: The customer finance export associates bank transfer data with an email address. No external service receives the content during this exercise.,0,0,0,1,0,0,1
+multi-07,Analyst summary: The customer finance export associates bank transfer data with an email address. This record is synthetic and must not be treated as real customer data.,0,0,0,1,0,0,1
+multi-07,Document excerpt: The customer finance export associates bank transfer data with an email address. No external service receives the content during this exercise.,0,0,0,1,0,0,1
+multi-07,Cloud object note: The customer finance export associates bank transfer data with an email address. This record is synthetic and must not be treated as real customer data.,0,0,0,1,0,0,1
+multi-08,Analyst summary: The clinic appointment file includes a patient's care note and phone contact. The sample contains fictional information for a local security exercise.,0,0,0,0,1,1,0
+multi-08,Document excerpt: The clinic appointment file includes a patient's care note and phone contact. The note is included to demonstrate document-level classification.,0,0,0,0,1,1,0
+multi-08,Cloud object note: The clinic appointment file includes a patient's care note and phone contact. The sample contains fictional information for a local security exercise.,0,0,0,0,1,1,0
+multi-08,Security review: The clinic appointment file includes a patient's care note and phone contact. The note is included to demonstrate document-level classification.,0,0,0,0,1,1,0
+multi-09,Document excerpt: A restricted service configuration and treasury export contain credential and bank account context. This record is synthetic and must not be treated as real customer data.,1,0,0,0,0,0,1
+multi-09,Cloud object note: A restricted service configuration and treasury export contain credential and bank account context. No external service receives the content during this exercise.,1,0,0,0,0,0,1
+multi-09,Security review: A restricted service configuration and treasury export contain credential and bank account context. This record is synthetic and must not be treated as real customer data.,1,0,0,0,0,0,1
+multi-09,Storage review: A restricted service configuration and treasury export contain credential and bank account context. No external service receives the content during this exercise.,1,0,0,0,0,0,1
+negative-00,Cloud object note: The architecture guide describes public request routing and service boundaries. The note is included to demonstrate document-level classification.,0,0,0,0,0,0,0
+negative-00,Security review: The architecture guide describes public request routing and service boundaries. The sample contains fictional information for a local security exercise.,0,0,0,0,0,0,0
+negative-00,Storage review: The architecture guide describes public request routing and service boundaries. The note is included to demonstrate document-level classification.,0,0,0,0,0,0,0
+negative-00,Data inventory: The architecture guide describes public request routing and service boundaries. The sample contains fictional information for a local security exercise.,0,0,0,0,0,0,0
+negative-01,Security review: Release notes summarize a user interface improvement and routine bug fixes. No external service receives the content during this exercise.,0,0,0,0,0,0,0
+negative-01,Storage review: Release notes summarize a user interface improvement and routine bug fixes. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,0
+negative-01,Data inventory: Release notes summarize a user interface improvement and routine bug fixes. No external service receives the content during this exercise.,0,0,0,0,0,0,0
+negative-01,Analyst summary: Release notes summarize a user interface improvement and routine bug fixes. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,0
+negative-02,Storage review: The operations memo explains backup rotation without including credentials or customer records. The sample contains fictional information for a local security exercise.,0,0,0,0,0,0,0
+negative-02,Data inventory: The operations memo explains backup rotation without including credentials or customer records. The note is included to demonstrate document-level classification.,0,0,0,0,0,0,0
+negative-02,Analyst summary: The operations memo explains backup rotation without including credentials or customer records. The sample contains fictional information for a local security exercise.,0,0,0,0,0,0,0
+negative-02,Document excerpt: The operations memo explains backup rotation without including credentials or customer records. The note is included to demonstrate document-level classification.,0,0,0,0,0,0,0
+negative-03,Data inventory: The public setup guide documents an API endpoint but contains no token or secret value. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,0
+negative-03,Analyst summary: The public setup guide documents an API endpoint but contains no token or secret value. No external service receives the content during this exercise.,0,0,0,0,0,0,0
+negative-03,Document excerpt: The public setup guide documents an API endpoint but contains no token or secret value. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,0
+negative-03,Cloud object note: The public setup guide documents an API endpoint but contains no token or secret value. No external service receives the content during this exercise.,0,0,0,0,0,0,0
+negative-04,"Analyst summary: The project plan tracks milestones, team owners, and delivery dates. The note is included to demonstrate document-level classification.",0,0,0,0,0,0,0
+negative-04,"Document excerpt: The project plan tracks milestones, team owners, and delivery dates. The sample contains fictional information for a local security exercise.",0,0,0,0,0,0,0
+negative-04,"Cloud object note: The project plan tracks milestones, team owners, and delivery dates. The note is included to demonstrate document-level classification.",0,0,0,0,0,0,0
+negative-04,"Security review: The project plan tracks milestones, team owners, and delivery dates. The sample contains fictional information for a local security exercise.",0,0,0,0,0,0,0
+negative-05,Document excerpt: The test plan uses placeholders and does not include real personal or financial data. No external service receives the content during this exercise.,0,0,0,0,0,0,0
+negative-05,Cloud object note: The test plan uses placeholders and does not include real personal or financial data. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,0
+negative-05,Security review: The test plan uses placeholders and does not include real personal or financial data. No external service receives the content during this exercise.,0,0,0,0,0,0,0
+negative-05,Storage review: The test plan uses placeholders and does not include real personal or financial data. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,0
+negative-06,Cloud object note: The meeting notes discuss database indexing and query performance. The sample contains fictional information for a local security exercise.,0,0,0,0,0,0,0
+negative-06,Security review: The meeting notes discuss database indexing and query performance. The note is included to demonstrate document-level classification.,0,0,0,0,0,0,0
+negative-06,Storage review: The meeting notes discuss database indexing and query performance. The sample contains fictional information for a local security exercise.,0,0,0,0,0,0,0
+negative-06,Data inventory: The meeting notes discuss database indexing and query performance. The note is included to demonstrate document-level classification.,0,0,0,0,0,0,0
+negative-07,Security review: The deployment checklist describes health checks and rollback procedures. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,0
+negative-07,Storage review: The deployment checklist describes health checks and rollback procedures. No external service receives the content during this exercise.,0,0,0,0,0,0,0
+negative-07,Data inventory: The deployment checklist describes health checks and rollback procedures. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,0
+negative-07,Analyst summary: The deployment checklist describes health checks and rollback procedures. No external service receives the content during this exercise.,0,0,0,0,0,0,0
+negative-08,Storage review: A public product page explains how to configure notification preferences. The note is included to demonstrate document-level classification.,0,0,0,0,0,0,0
+negative-08,Data inventory: A public product page explains how to configure notification preferences. The sample contains fictional information for a local security exercise.,0,0,0,0,0,0,0
+negative-08,Analyst summary: A public product page explains how to configure notification preferences. The note is included to demonstrate document-level classification.,0,0,0,0,0,0,0
+negative-08,Document excerpt: A public product page explains how to configure notification preferences. The sample contains fictional information for a local security exercise.,0,0,0,0,0,0,0
+negative-09,Data inventory: The maintenance report records uptime and latency for a test service. No external service receives the content during this exercise.,0,0,0,0,0,0,0
+negative-09,Analyst summary: The maintenance report records uptime and latency for a test service. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,0
+negative-09,Document excerpt: The maintenance report records uptime and latency for a test service. No external service receives the content during this exercise.,0,0,0,0,0,0,0
+negative-09,Cloud object note: The maintenance report records uptime and latency for a test service. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,0
+negative-10,Analyst summary: The developer guide explains how to name variables and organize source files. The sample contains fictional information for a local security exercise.,0,0,0,0,0,0,0
+negative-10,Document excerpt: The developer guide explains how to name variables and organize source files. The note is included to demonstrate document-level classification.,0,0,0,0,0,0,0
+negative-10,Cloud object note: The developer guide explains how to name variables and organize source files. The sample contains fictional information for a local security exercise.,0,0,0,0,0,0,0
+negative-10,Security review: The developer guide explains how to name variables and organize source files. The note is included to demonstrate document-level classification.,0,0,0,0,0,0,0
+negative-11,Document excerpt: The design review compares navigation layouts and accessibility improvements. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,0
+negative-11,Cloud object note: The design review compares navigation layouts and accessibility improvements. No external service receives the content during this exercise.,0,0,0,0,0,0,0
+negative-11,Security review: The design review compares navigation layouts and accessibility improvements. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,0
+negative-11,Storage review: The design review compares navigation layouts and accessibility improvements. No external service receives the content during this exercise.,0,0,0,0,0,0,0
+negative-12,Cloud object note: A synthetic security policy explains that passwords should never be stored in source code. The note is included to demonstrate document-level classification.,0,0,0,0,0,0,0
+negative-12,Security review: A synthetic security policy explains that passwords should never be stored in source code. The sample contains fictional information for a local security exercise.,0,0,0,0,0,0,0
+negative-12,Storage review: A synthetic security policy explains that passwords should never be stored in source code. The note is included to demonstrate document-level classification.,0,0,0,0,0,0,0
+negative-12,Data inventory: A synthetic security policy explains that passwords should never be stored in source code. The sample contains fictional information for a local security exercise.,0,0,0,0,0,0,0
+negative-13,Security review: The training document teaches how to identify fake card and identity values in a mock dataset. No external service receives the content during this exercise.,0,0,0,0,0,0,0
+negative-13,Storage review: The training document teaches how to identify fake card and identity values in a mock dataset. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,0
+negative-13,Data inventory: The training document teaches how to identify fake card and identity values in a mock dataset. No external service receives the content during this exercise.,0,0,0,0,0,0,0
+negative-13,Analyst summary: The training document teaches how to identify fake card and identity values in a mock dataset. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,0
+negative-14,Storage review: The system inventory lists software versions and non-sensitive service owners. The sample contains fictional information for a local security exercise.,0,0,0,0,0,0,0
+negative-14,Data inventory: The system inventory lists software versions and non-sensitive service owners. The note is included to demonstrate document-level classification.,0,0,0,0,0,0,0
+negative-14,Analyst summary: The system inventory lists software versions and non-sensitive service owners. The sample contains fictional information for a local security exercise.,0,0,0,0,0,0,0
+negative-14,Document excerpt: The system inventory lists software versions and non-sensitive service owners. The note is included to demonstrate document-level classification.,0,0,0,0,0,0,0
+negative-15,Data inventory: The incident review records a service restart and a successful recovery timeline. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,0
+negative-15,Analyst summary: The incident review records a service restart and a successful recovery timeline. No external service receives the content during this exercise.,0,0,0,0,0,0,0
+negative-15,Document excerpt: The incident review records a service restart and a successful recovery timeline. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,0
+negative-15,Cloud object note: The incident review records a service restart and a successful recovery timeline. No external service receives the content during this exercise.,0,0,0,0,0,0,0
+negative-16,Analyst summary: A public FAQ explains how customers update their profile settings. The note is included to demonstrate document-level classification.,0,0,0,0,0,0,0
+negative-16,Document excerpt: A public FAQ explains how customers update their profile settings. The sample contains fictional information for a local security exercise.,0,0,0,0,0,0,0
+negative-16,Cloud object note: A public FAQ explains how customers update their profile settings. The note is included to demonstrate document-level classification.,0,0,0,0,0,0,0
+negative-16,Security review: A public FAQ explains how customers update their profile settings. The sample contains fictional information for a local security exercise.,0,0,0,0,0,0,0
+negative-17,Document excerpt: The analytics summary contains aggregate counts with no individual records. No external service receives the content during this exercise.,0,0,0,0,0,0,0
+negative-17,Cloud object note: The analytics summary contains aggregate counts with no individual records. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,0
+negative-17,Security review: The analytics summary contains aggregate counts with no individual records. No external service receives the content during this exercise.,0,0,0,0,0,0,0
+negative-17,Storage review: The analytics summary contains aggregate counts with no individual records. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,0
+negative-18,Cloud object note: The engineering note compares email delivery providers without listing recipients. The sample contains fictional information for a local security exercise.,0,0,0,0,0,0,0
+negative-18,Security review: The engineering note compares email delivery providers without listing recipients. The note is included to demonstrate document-level classification.,0,0,0,0,0,0,0
+negative-18,Storage review: The engineering note compares email delivery providers without listing recipients. The sample contains fictional information for a local security exercise.,0,0,0,0,0,0,0
+negative-18,Data inventory: The engineering note compares email delivery providers without listing recipients. The note is included to demonstrate document-level classification.,0,0,0,0,0,0,0
+negative-19,Security review: The project retrospective records lessons about testing and documentation quality. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,0
+negative-19,Storage review: The project retrospective records lessons about testing and documentation quality. No external service receives the content during this exercise.,0,0,0,0,0,0,0
+negative-19,Data inventory: The project retrospective records lessons about testing and documentation quality. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,0
+negative-19,Analyst summary: The project retrospective records lessons about testing and documentation quality. No external service receives the content during this exercise.,0,0,0,0,0,0,0
+negative-20,Storage review: The open-source README includes installation commands and feature descriptions. The note is included to demonstrate document-level classification.,0,0,0,0,0,0,0
+negative-20,Data inventory: The open-source README includes installation commands and feature descriptions. The sample contains fictional information for a local security exercise.,0,0,0,0,0,0,0
+negative-20,Analyst summary: The open-source README includes installation commands and feature descriptions. The note is included to demonstrate document-level classification.,0,0,0,0,0,0,0
+negative-20,Document excerpt: The open-source README includes installation commands and feature descriptions. The sample contains fictional information for a local security exercise.,0,0,0,0,0,0,0
+negative-21,Data inventory: A product roadmap outlines planned improvements for the next release. No external service receives the content during this exercise.,0,0,0,0,0,0,0
+negative-21,Analyst summary: A product roadmap outlines planned improvements for the next release. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,0
+negative-21,Document excerpt: A product roadmap outlines planned improvements for the next release. No external service receives the content during this exercise.,0,0,0,0,0,0,0
+negative-21,Cloud object note: A product roadmap outlines planned improvements for the next release. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,0
+negative-22,"Analyst summary: The code review discusses readability, maintainability, and error handling. The sample contains fictional information for a local security exercise.",0,0,0,0,0,0,0
+negative-22,"Document excerpt: The code review discusses readability, maintainability, and error handling. The note is included to demonstrate document-level classification.",0,0,0,0,0,0,0
+negative-22,"Cloud object note: The code review discusses readability, maintainability, and error handling. The sample contains fictional information for a local security exercise.",0,0,0,0,0,0,0
+negative-22,"Security review: The code review discusses readability, maintainability, and error handling. The note is included to demonstrate document-level classification.",0,0,0,0,0,0,0
+negative-23,Document excerpt: The storage guide describes encryption concepts without showing actual secret values. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,0
+negative-23,Cloud object note: The storage guide describes encryption concepts without showing actual secret values. No external service receives the content during this exercise.,0,0,0,0,0,0,0
+negative-23,Security review: The storage guide describes encryption concepts without showing actual secret values. This record is synthetic and must not be treated as real customer data.,0,0,0,0,0,0,0
+negative-23,Storage review: The storage guide describes encryption concepts without showing actual secret values. No external service receives the content during this exercise.,0,0,0,0,0,0,0

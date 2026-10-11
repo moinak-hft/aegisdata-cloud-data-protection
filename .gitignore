@@ -1,0 +1,10 @@
+.venv/
+models/
+__pycache__/
+*.py[cod]
+.streamlit/secrets.toml
+.env
+data/aegisdata.db
+data/aegisdata.db-shm
+data/aegisdata.db-wal
+.DS_Store
