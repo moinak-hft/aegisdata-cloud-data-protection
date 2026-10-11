@@ -1,325 +1,262 @@
-# AegisData - AI-assisted cloud data discovery and protection
+# AegisData
 
-A portfolio project inspired by the first project concept in the supplied internship-context document. It scans small local documents and, optionally, a narrowly scoped Amazon S3 prefix; detects common personal-data and credential patterns; combines a TF-IDF baseline with an optional locally fine-tuned DistilBERT multi-label classifier; OCRs sparse-text PDF pages when configured; explains risk; masks evidence; and keeps an audit-friendly metadata history.
+A local-first tool for finding sensitive data in documents and selected cloud storage locations. AegisData combines pattern-based detection, optional text classifiers, scanned-PDF OCR, masked findings, and a small review dashboard.
 
-**This is a learning prototype, not a production DLP/DSPM control.** It uses only synthetic demo data by default. It does not call a hosted LLM, upload data, change source files, or automatically remediate cloud objects.
+The scan path is inspectable: extracted text is analyzed in the local process, findings show which detector fired, and source documents are not written to the scan database. This is a prototype for experimentation, not a production data-loss-prevention system.
 
-## 1. Technology stack
+## What it does
 
-| Layer | Technology | Why it is here |
-|---|---|---|
-| Language | Python 3.12 recommended | Clear security tooling ecosystem and a straightforward local workflow |
-| Dashboard | Streamlit | Upload and review scans in a small local web UI |
-| ML baseline | scikit-learn: TF-IDF + logistic regression | A fast, inspectable binary context classifier that works without model downloads |
-| Optional deep ML | PyTorch + Hugging Face Transformers: fine-tuned DistilBERT | Local multi-label document/chunk signals for credentials, payment, government ID, contact, health, and financial-account context |
-| Exact-value detection | Python regular expressions plus Luhn check | Explainable detectors for common emails, US phone/SSN candidates, card numbers, and token/secret formats |
-| Persistence | SQLite | Local scan history without a separate database service |
-| File parsing | Python standard library + pypdf | Text, Markdown, CSV, JSON, and digital PDF text extraction |
-| Optional OCR | pypdfium2 + pytesseract + Tesseract OCR | Render sparse-text PDF pages locally and recognize image-only text |
-| Optional cloud source | boto3 and Amazon S3 | Read-only listing and retrieval from a selected bucket prefix |
-| Local S3 practice | Moto server | Exercise the same boto3 S3 path against localhost without an AWS account |
-| Synthetic training data | Included deterministic generator | Reproducible, non-sensitive starter data with no external dataset download |
+- Scans TXT, Markdown, CSV, JSON, and PDF files from the dashboard or a local folder.
+- Detects a limited set of personal-data and credential patterns with regular expressions and a Luhn check.
+- Adds a scikit-learn TF-IDF classifier and an optional locally fine-tuned DistilBERT multi-label model for document and text-chunk context.
+- Uses Tesseract OCR on sparse-text PDF pages when the optional OCR dependencies are installed.
+- Shows masked evidence, risk labels, detector details, and suggested review actions.
+- Keeps scan metadata and history in a local SQLite database.
+- Can read a selected S3 prefix; Moto provides a local S3-compatible workflow that does not require an AWS account.
 
-The Streamlit installer documentation currently lists Python 3.10-3.14 support and recommends an isolated environment; the project uses that environment pattern. The scikit-learn install guide also recommends isolated environments. [Streamlit setup guide](https://docs.streamlit.io/get-started/installation/command-line), [scikit-learn install guide](https://scikit-learn.org/stable/install)
+## Scan flow
 
-## 2. What happens during a scan
-
-```mermaid
+~~~mermaid
 flowchart LR
-    A[Local upload or chosen folder] --> B[In-memory text extraction]
-    A2[Optional S3 prefix] --> B
-    B --> C[Explainable pattern detectors]
-    B --> D[TF-IDF + logistic regression baseline]
-    B --> I[Optional DistilBERT multi-label chunk classifier]
-    C --> E[Risk score and recommendations]
-    D --> E
-    I --> E
-    E --> F[Masked evidence in dashboard]
-    E --> G[SQLite metadata and finding history]
-    E --> H[Optional redacted text download]
-```
+    subgraph source["1 · Sources"]
+        upload["Browser upload"]
+        folder["Local folder"]
+        s3["Optional S3 prefix<br/>read-only"]
+    end
 
-The baseline estimates whether context resembles sensitive-data text. If the optional transformer has been trained, it adds category-specific document/chunk scores. The rules detect exact values and formats and remain the only source of exact-match evidence. A high model score with no exact match is a review prompt, not proof that the file contains regulated data. The model scores are not calibrated breach probabilities.
+    subgraph extract["2 · Extract text locally"]
+        parser["Parse TXT · MD · CSV · JSON · PDF"]
+        direct["Extract available text"]
+        ocr["Render sparse-text PDF pages<br/>pypdfium2 + Tesseract OCR"]
+        normalize["Normalized text<br/>held in process memory"]
+    end
 
-## 3. Project layout
+    subgraph analyze["3 · Analyze"]
+        rules["Pattern detectors<br/>regex + Luhn"]
+        baseline["TF-IDF context classifier<br/>scikit-learn"]
+        transformer["Optional category classifier<br/>fine-tuned DistilBERT"]
+        combine["Risk scoring<br/>and review guidance"]
+    end
 
-```text
+    subgraph results["4 · Review"]
+        ui["Dashboard<br/>masked evidence"]
+        history["SQLite<br/>scan metadata"]
+        export["Redacted text<br/>download"]
+    end
+
+    upload --> parser
+    folder --> parser
+    s3 --> parser
+    parser --> direct --> normalize
+
+    parser -. sparse-text PDF page .-> ocr --> normalize
+    normalize --> rules
+    normalize --> baseline
+    normalize -. optional .-> transformer
+    rules --> combine
+    baseline --> combine
+    transformer --> combine
+    combine --> ui
+    combine --> history
+    combine --> export
+
+    classDef source fill:#E8F2FF,stroke:#4778A8,color:#172B3A
+    classDef extract fill:#EAF6F0,stroke:#4B8A6A,color:#18382A
+    classDef analyze fill:#FFF4DF,stroke:#B88428,color:#49350E
+    classDef result fill:#F1ECFA,stroke:#7962A6,color:#2C2141
+    class upload,folder,s3 source
+    class parser,direct,ocr,normalize extract
+    class rules,baseline,transformer,combine analyze
+    class ui,history,export result
+~~~
+
+Pattern detectors produce exact match locations and masked evidence. Classifiers add context scores; they do not identify exact character spans. A model score is a signal for review, not proof that a document contains regulated data. The scores are not calibrated breach probabilities.
+
+## Data handling
+
+When run locally, the browser sends selected files to the local Streamlit process. The app extracts and scans their contents in memory. It stores scan metadata, hashes, masked finding details, and risk information in SQLite; it does not store the original document body. The redacted download is a text file, not a modified copy of the original PDF.
+
+The optional S3 connector reads objects under a selected prefix into the local process. It does not upload, tag, delete, or change objects. Use synthetic or otherwise authorized data, and keep credentials out of the repository.
+
+## Project structure
+
+~~~text
 aegisdata/
 ├── aegisdata/
-│   ├── classifier.py       # train and evaluate the synthetic text classifier
-│   ├── cli.py              # local folder, evaluation, and optional S3 commands
-│   ├── config.py           # paths, file-size limits, supported formats
-│   ├── detectors.py        # explainable rules, safe evidence masking, redaction
-│   ├── extractors.py       # in-memory extraction and optional local PDF OCR
-│   ├── models.py           # scan and finding data objects
-│   ├── scanner.py          # joins extraction, detection, and risk scoring
-│   ├── storage.py          # SQLite schema and queries
-│   └── transformer_model.py # optional local transformer inference
+│   ├── classifier.py          # TF-IDF model training and evaluation
+│   ├── cli.py                 # folder, evaluation, and optional S3 commands
+│   ├── config.py              # paths, limits, and supported file types
+│   ├── detectors.py           # pattern rules, masking, and redaction
+│   ├── extractors.py          # text extraction and optional PDF OCR
+│   ├── models.py              # scan and finding data structures
+│   ├── scanner.py             # detection and risk aggregation
+│   ├── storage.py             # SQLite schema and queries
+│   └── transformer_model.py   # optional DistilBERT inference
 ├── data/
 │   ├── synthetic_training.csv
 │   └── synthetic_multilabel.csv
-├── models/                 # local fine-tuned weights; ignored by Git
 ├── docs/
 │   ├── PROJECT_WALKTHROUGH.md
 │   └── s3-read-only-policy.json
-├── samples/demo_docs/      # deliberately synthetic scan examples
+├── samples/demo_docs/         # synthetic files for trying the scanner
 ├── scripts/
 │   ├── generate_synthetic_corpus.py
 │   ├── generate_multilabel_corpus.py
-│   ├── train_transformer.py
-│   └── seed_local_s3.py
+│   ├── seed_local_s3.py
+│   └── train_transformer.py
 ├── streamlit_app.py
-├── requirements-ml.txt
-├── requirements-ocr.txt
-└── requirements.txt
-```
+├── requirements*.txt
+└── README.md
+~~~
 
-## 4. Run it in VS Code on Windows
+The virtual environment, SQLite database, secrets, and trained model artifacts are excluded by .gitignore. The demo and training corpora are synthetic and are included in the repository.
 
-Open the `aegisdata` folder in VS Code. Open **Terminal -> New Terminal** and use **PowerShell**. Check that Python 3.12 is available:
+## Run locally on Windows
 
-```powershell
-py -3.12 --version
-```
+Open this folder in VS Code, then open **Terminal → New Terminal**. These commands use PowerShell from the project root.
 
-If that command is unavailable, install Python 3.12 or another supported Python release, then reopen VS Code. Streamlit's current command-line setup guide lists supported Python releases and the standard `venv` workflow.
+Create and activate a virtual environment:
 
-Create a project-only environment:
-
-```powershell
-py -3.12 -m venv .venv
-```
-
-Activate it:
-
-```powershell
+~~~powershell
+python --version
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
-```
+~~~
 
-If PowerShell blocks activation, allow it only for this terminal process, then activate again:
+If PowerShell blocks activation in this terminal, run:
 
-```powershell
+~~~powershell
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .\.venv\Scripts\Activate.ps1
-```
+~~~
 
-Install the packages:
+Install the core dependencies and initialize the local database:
 
-```powershell
+~~~powershell
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
-```
-
-The synthetic corpus is already included. You can regenerate it at any time with the same seed:
-
-```powershell
-python .\scripts\generate_synthetic_corpus.py --rows-per-class 250 --seed 42
-```
-
-Create the local database:
-
-```powershell
 python -m aegisdata.cli init-db
-```
+~~~
 
-Run the included sample folder scan:
+Scan the included examples from the command line:
 
-```powershell
+~~~powershell
 python -m aegisdata.cli scan-directory --path .\samples\demo_docs
-```
+~~~
 
 Start the dashboard:
 
-```powershell
+~~~powershell
 python -m streamlit run .\streamlit_app.py
-```
+~~~
 
-Streamlit prints a local address, normally `http://localhost:8501`; open it in your browser. Upload the same synthetic sample files in **Scan files** to see masked evidence and download a redacted `.txt` copy. To stop the local server, focus the VS Code terminal and press `Ctrl+C`.
+Open the local address printed by Streamlit, usually http://localhost:8501. In **Scan files**, select one or more documents and click **Scan selected files**. The current upload limit is 8 MiB per file. Press Ctrl+C in the server terminal to stop the app.
 
-### If activation is inconvenient
+To use the virtual environment without activating it, prefix commands with .\.venv\Scripts\python.exe.
 
-You can call the virtual-environment interpreter explicitly instead of activating it:
+## Detection and model options
 
-```powershell
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe -m aegisdata.cli init-db
-.\.venv\Scripts\python.exe -m streamlit run .\streamlit_app.py
-```
+### Pattern rules and baseline classifier
 
-In VS Code, select the environment with **Ctrl+Shift+P -> Python: Select Interpreter -> `.venv`** so the editor uses the same packages as the terminal.
+The rule layer looks for a deliberately limited set of formats, including email addresses, US phone and SSN candidates, Luhn-valid card candidates, common token prefixes, key headers, and simple credential assignments. Rules can produce false positives and do not cover every format.
 
-## 5. Put the project on GitHub
+The baseline classifier uses TF-IDF features with logistic regression to estimate whether text resembles sensitive-data context. It works without downloading a language model.
 
-Install Git if needed, then run these commands from the project root after reviewing the files:
+To evaluate the baseline against the included synthetic corpus:
 
-```powershell
-git init
-git add .
-git status --short
-git commit -m "Build AegisData cloud data protection prototype"
-git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/aegisdata.git
-git push -u origin main
-```
-
-Create an empty repository on GitHub first and replace `YOUR-USERNAME`. Check `git status --short` before committing; the local database and AWS secrets/config are excluded by `.gitignore`. Do not commit real scanned files, credentials, personal data, or employer material.
-
-## 6. Commands to explore
-
-Evaluate the model on a deterministic held-out split of the included synthetic corpus:
-
-```powershell
+~~~powershell
 python -m aegisdata.cli evaluate
-```
+~~~
 
-Scan another local folder you are authorized to inspect:
+The evaluation uses a held-out split of generated examples. Its results measure performance on that synthetic data only; they do not estimate real-world detection quality.
 
-```powershell
-python -m aegisdata.cli scan-directory --path "C:\path\to\your\authorized\demo-files"
-```
+### Optional DistilBERT model
 
-You can change the local database path for a terminal session:
+The optional multi-label classifier adds category scores for cloud credentials, payment cards, government IDs, email, phone, health information, and financial accounts. It scores text chunks and retains category scores for review. It does not provide token-level locations, so redaction spans still come from the pattern rules.
 
-```powershell
-$env:AEGIS_DB_PATH = ".\data\practice.db"
-python -m aegisdata.cli init-db
-```
+Install the ML dependencies, regenerate the deterministic corpus if desired, and train locally:
 
-To reset the default demo history, stop the app and remove only `data/aegisdata.db` from this project. The synthetic training CSV is separate and will remain.
-
-## 7. S3 practice without an AWS account
-
-You do not need AWS to learn the S3 scanning flow. Moto starts a local S3-compatible mock server; the app points boto3 at `127.0.0.1`, so requests stay on your computer. Moto is an emulator, not a real AWS environment. Its server mode is documented for use with SDK endpoint URLs. [Moto server mode](https://docs.getmoto.org/en/stable/docs/server_mode.html), [Moto S3 support](https://docs.getmoto.org/en/stable/docs/services/s3.html)
-
-In VS Code Terminal 1, install the optional Moto server package and start it:
-
-```powershell
-python -m pip install -r requirements-local-s3.txt
-moto_server -H 127.0.0.1 -p 5000
-```
-
-Leave that terminal open. In Terminal 2, from the project root, seed only the included synthetic files and scan the local bucket:
-
-```powershell
-python .\scripts\seed_local_s3.py
-python -m aegisdata.cli scan-s3 --bucket aegisdata-demo --prefix demo/ --region us-east-1 --endpoint-url http://127.0.0.1:5000 --max-objects 25
-```
-
-Stop the Moto server with `Ctrl+C`. The seed script rejects non-local endpoints, and the scanner uses dummy credentials whenever `--endpoint-url` is set. This workflow creates no AWS resources or AWS bill. It uses CPU, memory, and local disk on your computer.
-
-## 8. Optional real AWS S3 demonstration
-
-You do not need this step for the project. If you later use real S3, use a test bucket and synthetic files that you own or are explicitly allowed to scan. The connector lists objects under one prefix and reads supported objects; it never uploads, tags, deletes, or changes bucket settings. boto3 uses the AWS profile/credential chain configured on your machine. [Boto3 credentials guide](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html)
-
-Amazon S3 is pay-as-you-go: storage, requests, retrievals, and some transfers/features can be chargeable. [AWS S3 pricing](https://aws.amazon.com/s3/pricing/) If you have no AWS account and run the local Moto steps above, you cannot incur an AWS S3 charge from this project. AWS currently advertises a Free plan for new accounts with up to $200 in credits over 6 months and says the Free plan is not charged unless you convert to a Paid plan or activate paid-only services; eligibility and service limits apply. You can skip creating an AWS account entirely for this build. [AWS Free Tier details](https://aws.amazon.com/free/)
-
-1. Create a demo bucket or use an authorized test bucket, and upload only synthetic files under a prefix such as `demo/`.
-2. Create an identity policy based on [`docs/s3-read-only-policy.json`](docs/s3-read-only-policy.json). Replace the bucket and prefix placeholders. It grants `s3:ListBucket` for that prefix and `s3:GetObject` for objects under it; do not add write access for this prototype. S3 uses `ListObjectsV2` for enumeration and `GetObject` for object reads. [S3 required permissions](https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-policy-actions.html)
-3. Configure an AWS IAM Identity Center profile using the AWS CLI v2 if your account provides one:
-
-   ```powershell
-   aws configure sso --profile aegis-readonly
-   aws sso login --profile aegis-readonly
-   ```
-
-4. Scan a small prefix with a cap:
-
-   ```powershell
-   python -m aegisdata.cli scan-s3 --bucket YOUR-DEMO-BUCKET --prefix demo/ --region ap-south-1 --profile aegis-readonly --max-objects 25
-   ```
-
-The object contents are read into the local process for extraction. The database stores the object URI and metadata, not the raw body. Avoid scanning broad buckets: use a narrow prefix and a small `--max-objects` value. Objects larger than the configured size limit are skipped. A customer-managed KMS-encrypted object may require a separately scoped decrypt permission; this example policy does not grant it.
-
-## 9. Optional deep-learning classifier
-
-The existing TF-IDF/logistic-regression classifier remains the lightweight baseline. The optional DistilBERT model adds a multi-label score for seven categories: cloud credentials, payment cards, government IDs, email addresses, phone numbers, health information, and financial accounts. It scores overlapping text chunks and keeps the highest score per category. The existing exact-value rules still supply masked evidence and offsets.
-
-From the project root, use a VS Code terminal:
-
-```powershell
+~~~powershell
 python -m pip install -r requirements-ml.txt
 python .\scripts\generate_multilabel_corpus.py
 python .\scripts\train_transformer.py --epochs 2 --batch-size 4
-```
+~~~
 
-The first training run downloads the pretrained `distilbert/distilbert-base-uncased` weights from Hugging Face. Training uses only the included synthetic corpus and runs locally; it does not send scanned documents anywhere and does not use AWS. CPU training can take several minutes or longer. A CUDA-capable PyTorch setup can use an available NVIDIA GPU, but is not required. The trained model is saved under `models/aegisdata-distilbert/`; restart Streamlit and the app loads it automatically. If the model folder is absent, the app keeps using the baseline.
+The first training run downloads the public DistilBERT base weights. Training uses the included synthetic text. CPU training may take several minutes. The resulting local model is saved under models/aegisdata-distilbert/; restart the dashboard to load it. Model weights are ignored by Git, so a fresh clone starts with the baseline until the model is trained.
 
-The generated corpus includes category labels and a `template_group`. Training, validation, and test groups are separated so near-duplicate variants of one template do not cross split boundaries. The training script prints and saves per-category precision, recall, and F1 at a 0.50 threshold. Those figures describe only this generated synthetic corpus; they are not evidence of real-world performance. Improve the corpus with separately authored or appropriately licensed examples before making effectiveness claims.
+The corpus includes template-group labels. The training script separates groups across train, validation, and test sets to reduce near-duplicate leakage, then reports per-category precision, recall, and F1. Treat those scores as synthetic-corpus results, not as evidence of performance on customer or production data.
 
-At inference, model probabilities are review signals. A model category is not an exact-match finding; it may be a false positive or miss content. No token-classification/NER model has been trained in this version, so contextual category scores do not create new redaction spans. Rules continue to produce exact offsets.
+## OCR for scanned PDFs
 
-## 10. OCR for scanned PDFs
+Digital PDFs use direct text extraction. A page with very little extracted text is treated as possibly scanned and sent to local OCR. The app renders only sparse-text pages, up to 20 OCR pages per file by default, with a total PDF limit of 40 pages.
 
-Text-based PDFs use direct extraction. When a page yields fewer than 24 characters, AegisData treats it as possibly scanned and runs local OCR on that page. It uses pypdfium2 to render the page and Tesseract to recognize text. The original PDF is not changed. OCR text is passed through the same rules and classifiers as other extracted text, and the redacted download is a text copy.
+Install the Python packages in the project environment:
 
-Install the optional Python packages inside the project's virtual environment:
-
-```powershell
+~~~powershell
 python -m pip install -r requirements-ocr.txt
-```
+~~~
 
-Tesseract itself is a separate Windows application. Install a current Windows build linked from the [official Tesseract installation guide](https://tesseract-ocr.github.io/tessdoc/Installation.html), make sure English language data is selected, and add its install directory to Windows `PATH` if the installer does not do that automatically. Close and reopen VS Code, then confirm:
+Tesseract is a separate application. Install it with English language data using the [Tesseract installation guide](https://tesseract-ocr.github.io/tessdoc/Installation.html), then check that the executable and language pack are visible:
 
-```powershell
+~~~powershell
 tesseract --version
-```
+tesseract --list-langs
+~~~
 
-The default limits are 40 PDF pages and 20 OCR pages per file. You can adjust them for a terminal session:
+The language list should include eng. If Tesseract was installed through MSYS2, open the **MSYS2 UCRT64** terminal and install the English language data package:
 
-```powershell
-$env:AEGIS_MAX_PDF_PAGES = "60"
-$env:AEGIS_MAX_OCR_PAGES = "40"
-$env:AEGIS_OCR_DPI = "250"
-```
+~~~bash
+pacman -S mingw-w64-ucrt-x86_64-tesseract-data-eng
+~~~
 
-If Tesseract is installed but not on `PATH`, set its executable path for the current terminal, then launch Streamlit from that terminal:
+OCR quality depends on scan clarity, rotation, handwriting, and page layout. Tables and multi-column pages may be read out of order. Review OCR-derived findings before relying on them.
 
-```powershell
-$env:AEGIS_TESSERACT_CMD = "C:\Program Files\Tesseract-OCR\tesseract.exe"
-```
+## Local S3 workflow without AWS
 
-OCR quality depends on scan resolution, contrast, rotation, handwriting, and layout. Tables and multi-column pages may be read in the wrong order. Review OCR-derived findings before relying on them. Tesseract performs OCR locally; it does not upload the page image. [PyTesseract requires the Tesseract application](https://pytesseract.readthedocs.io/en/latest/), and pypdfium2 renders PDF pages for image processing. [pypdfium2 project](https://pypi.org/project/pypdfium2/)
+Moto can emulate the S3 API locally. This is useful for exercising the same boto3 code path without creating an AWS account or resources.
 
-## 11. How the scores work
+In VS Code Terminal 1, install the optional dependency and start the local server:
 
-- **Rule match:** each match has a category, rule identifier, confidence value, severity, masked category label/offset, and a suggested next step.
-- **Context score:** the baseline returns a probability for sensitive context. When the transformer artifact exists, the app also scores seven categories over text chunks and stores those signals separately.
-- **Risk score:** exact credential/card/ID matches start higher than contact information. Transformer category scores can raise a review score but do not create exact-value matches. Multiple exact categories add a small capped bonus.
-- **Label:** the numeric score maps to Low, Medium, High, or Critical. These are triage labels chosen for this demo, not a compliance standard.
-- **Evidence masking:** the report stores a category placeholder and text offsets, not surrounding source text. This prevents an unrelated, unrecognized secret next to a finding from being copied into SQLite. Original file bodies are not stored.
+~~~powershell
+python -m pip install -r requirements-local-s3.txt
+moto_server -H 127.0.0.1 -p 5000
+~~~
 
-The rules cover a small set of formats, including email addresses, US phone and SSN candidates, Luhn-valid payment-card candidates, common token prefixes, key headers, and simple credential assignments. Rule matches can be wrong; missing a rule pattern is not evidence that a file is safe.
+Leave it running. In Terminal 2, from the project root, load only the included synthetic files and scan them:
 
-## 12. Evaluation and honest reporting
+~~~powershell
+python .\scripts\seed_local_s3.py
+python -m aegisdata.cli scan-s3 --bucket aegisdata-demo --prefix demo/ --region us-east-1 --endpoint-url http://127.0.0.1:5000 --max-objects 25
+~~~
 
-`python -m aegisdata.cli evaluate` reports accuracy, precision, recall, and F1 on a reproducible 25% holdout split. That split is drawn from generated synthetic text. Its metrics measure whether the demo model learned that synthetic corpus; they do **not** estimate real-world DLP performance, cloud coverage, or performance on new organizations.
+Stop Moto with Ctrl+C. The seed script only accepts a local endpoint. This workflow uses local CPU, memory, and disk; it does not create AWS resources.
 
-For stronger evidence before adding metrics to a resume:
+For a real S3 bucket, use a narrow prefix and a least-privilege policy based on [docs/s3-read-only-policy.json](docs/s3-read-only-policy.json). The connector needs list and read access only. The object's contents are fetched into the local process for scanning; this project does not configure automatic remediation.
 
-1. Create a separate, authorized evaluation corpus with clear labels and no sensitive production data.
-2. Keep duplicate templates and near-duplicates from leaking across train and holdout sets.
-3. Report per-category precision and recall, false positives per 1,000 documents, scan throughput, and the exact dataset size/split.
-4. Compare the model-only, rules-only, and combined results.
-5. Save the dataset description and commands so someone else can reproduce the results.
+## Evaluation limits
 
-Do not put an accuracy number on a resume until you have run a meaningful evaluation and can explain what the test set contained.
+The included datasets are generated, not collected from real users. A random row split can overstate performance when examples are very similar, so the multi-label training pipeline groups variants by template. Even with grouped splits, synthetic results do not capture the variety of real documents, OCR errors, organization-specific formats, or adversarially modified inputs.
 
-## 13. Resume wording
+Before making performance claims, build an authorized and appropriately licensed evaluation set. Report per-category precision and recall, false positives per 1,000 documents, OCR quality by scan type, throughput, and the exact data split. Compare the rules-only, baseline-only, and combined systems.
 
-After you run the project and understand each component, a defensible starting bullet is:
+## Future work
 
-> Built a local-first cloud data discovery prototype in Python with Streamlit, combining explainable PII/secret rules, a scikit-learn baseline, and an optional fine-tuned DistilBERT multi-label classifier; added local OCR for scanned PDF pages, masked evidence, grouped synthetic-data evaluation, SQLite scan history, and an optional read-only S3 workflow.
+The next stages are intentionally more demanding than adding more regular expressions:
 
-Only add measured precision, recall, throughput, or cloud-scale claims after you have produced and documented those measurements yourself. Do not imply this is Zscaler software or that you used Zscaler confidential information.
+1. **Span-level extraction and geometry-aware redaction.** Train a token-classification model with BIO or span labels, preserve character offsets through normalization, and map OCR token boxes back to PDF coordinates. Use the resulting geometry to redact the original page while retaining a reviewable audit trail.
 
-## 14. Boundaries and next steps
+2. **Weak supervision and active learning.** Combine labeling functions from format checks, checksums, surrounding context, and document layout; estimate noisy-label quality; send uncertain examples to a controlled review queue; and retrain from adjudicated labels without mixing document templates across splits.
 
-- OCR depends on a separate Tesseract installation and may misread low-quality scans, handwriting, tables, or multi-column layouts.
-- It recognizes only selected patterns and mostly US-specific identifier formats.
-- Both models train on synthetic text; transformer scores do not establish production detection effectiveness.
-- The transformer predicts document/chunk categories, not exact PII spans. Exact redaction evidence still comes from rules; a trained token-classification model remains a possible later extension.
-- There is no authentication, multi-user access control, hosted deployment, alert queue, or automatic remediation.
-- The S3 connector is read-only, but the operator still needs authorization and must choose a safe source.
-- The local SQLite database retains names/URIs, hashes, masked finding labels/offsets, and risk metadata. Protect or remove it if filenames or locations are sensitive.
+3. **Calibrated decisions under distribution shift.** Tune per-category thresholds against explicit false-positive and false-negative costs, measure calibration error, and add selective prediction or conformal risk control so the system can abstain when evidence is weak or the input differs from training data.
 
-Good next milestones: add a carefully licensed benchmark with documented data handling; train a token-classification model on span-labeled examples; add a review/false-positive feedback loop; and measure OCR and model performance on a distinct held-out set before changing the resume claims.
+4. **Layout-aware document understanding.** Preserve page, line, table-cell, and bounding-box structure through OCR. Compare OCR engines and layout-aware encoders on rotated scans, multi-column pages, forms, and tables; measure both text recognition and downstream detection quality.
+
+5. **Incremental cloud scanning at scale.** Replace prefix-wide rereads with S3 Inventory or event-driven discovery, version-aware object identities, content hashes, idempotent workers, bounded queues, retries, and backpressure. Track object versions so a rescan can distinguish changed content from a new location.
+
+6. **Data lineage and policy evaluation.** Build a graph linking objects, detected entities, copies, and storage locations. Evaluate access and retention rules against that graph with a policy engine, then explain which source object and rule caused a finding to propagate.
+
+7. **Privacy-preserving model development.** If training ever uses sensitive examples, investigate differential privacy with a documented privacy budget, membership-inference tests, artifact access controls, and a reproducible data-retention process.
+
+These are research and engineering directions, not features in the current implementation. Each should be paired with a threat model and a reproducible evaluation before it is described as complete.
+
+
